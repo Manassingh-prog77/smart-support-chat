@@ -10,6 +10,6 @@ export const env = {
   port: toNumber(process.env.PORT, 8787),
   clientOrigin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173',
   geminiApiKey: process.env.GEMINI_API_KEY ?? '',
-  geminiModel: process.env.GEMINI_MODEL ?? 'gemini-3.5-flash',
+  geminiModel: process.env.GEMINI_MODEL ?? 'gemini-2.5-flash',
   databasePath: path.resolve(process.cwd(), process.env.DATABASE_PATH ?? './data/spur-chat.sqlite')
 };

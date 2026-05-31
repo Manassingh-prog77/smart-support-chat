@@ -20,7 +20,7 @@ A production-minded take-home implementation of a Spur-branded AI live chat widg
 
    ```bash
    GEMINI_API_KEY=your_google_ai_studio_key_here
-   GEMINI_MODEL=gemini-3.5-flash
+   GEMINI_MODEL=gemini-2.5-flash
    DATABASE_PATH=./data/spur-chat.sqlite
    PORT=8787
    CLIENT_ORIGIN=http://localhost:5173
@@ -82,7 +82,7 @@ Returns:
 
 Provider: Gemini via the Google AI Studio REST API.
 
-Model default: `gemini-3.5-flash`, with a server-side fallback to `gemini-2.5-flash` if that model is unavailable for the configured key.
+Model default: `gemini-2.5-flash`.
 
 The system instruction constrains the assistant to Spur-specific support, sales, pricing, integration, setup, and automation questions. It tells the model to decline unrelated trivia and route account-specific, legal, refund, or billing commitments to Spur support.
 

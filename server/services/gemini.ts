@@ -14,7 +14,7 @@ type GeminiContent = {
 
 const REQUEST_TIMEOUT_MS = 20_000;
 const MAX_HISTORY_MESSAGES = 14;
-const FALLBACK_MODELS = ['gemini-3.5-flash', 'gemini-2.5-flash'];
+const FALLBACK_MODELS = ['gemini-2.5-flash'];
 
 class GeminiRequestError extends Error {
   constructor(
