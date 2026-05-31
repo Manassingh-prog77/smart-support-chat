@@ -12,10 +12,21 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+const allowedOrigins = env.clientOrigin
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
 
 app.use(
   cors({
-    origin: env.nodeEnv === 'production' ? false : env.clientOrigin
+    origin(origin, callback) {
+      if (!origin || env.nodeEnv !== 'production' || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(null, false);
+    }
   })
 );
 app.use(express.json({ limit: '32kb' }));
